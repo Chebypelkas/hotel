@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск по посетителям</title>
+</head>
+<body>
+    <h1>Поиск по имени</h1>
+    <!-- форма поиска -->
+    <form method="GET" action="{% url 'search_name' %}">
+        <input type="text" name="q" placeholder="введите имя...">
+        <button type="submit">поиск</button>
+    </form>
+    <ul>
+        {% for passport in passports %}
+            <li>{{passport.name}} {{passport.last_name}}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

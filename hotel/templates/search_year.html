@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск по дате</title>
+</head>
+<body>
+    <h1>Поиск по дате</h1>
+    <!-- форма поиска -->
+    <form method="GET" action="{% url 'search_year' %}">
+        <input type="number" name="q" placeholder="введите год...">
+        <button type="submit">поиск</button>
+    </form>
+    <ul>
+        {% for visitor in visitors %}
+            <li>{{visitor.name}} {{visitor.date}}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
